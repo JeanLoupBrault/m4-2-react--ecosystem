@@ -8,7 +8,7 @@
 ---
 
 ```jsx
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Button = styled.button`
   background: blueviolet;
@@ -19,10 +19,7 @@ const Button = styled.button`
   border-radius: 2px;
 `;
 
-ReactDOM.render(
-  <Button>Hello World</Button>,
-  document.querySelector('#root')
-);
+ReactDOM.render(<Button>Hello World</Button>, document.querySelector("#root"));
 ```
 
 ---
@@ -39,7 +36,7 @@ const Button = styled.button`
 // It's similar to:
 const Button = styled.button(`
   // styles here
-`)
+`);
 ```
 
 ---
@@ -72,9 +69,9 @@ const Button = styled.button`
   &:hover {
     transform: scale(1.1);
   }
-`
+`;
 
-render(<Button>Hello world</Button>)
+render(<Button>Hello world</Button>);
 ```
 
 ---
@@ -96,33 +93,38 @@ Convert the following inline styles to styled-components
   margin: 0 auto;
   height: 300px;
 }
-
 ```
-
 
 ```jsx
 function App(props) {
-  return (
-    <div className="wrapper">
-      Hello World
-    </div>
-  )
+  return <div className="wrapper">Hello World</div>;
 }
 ```
+
+import styles from 'styled-components';
+const StyledWrapper = styled.div`margin: 0 auto; height: 300px;`;
+
+function App() {
+return (
+<StyledWrapper>
+Hello World
+</StyledWrapper>
+)
+}
 
 ---
 
 ### Exercise #2
 
 ```css
-
 .btn {
   color: tomato;
   font-weight: bold;
   padding: 20px;
 }
 
-.btn:hover, .btn:focus {
+.btn:hover,
+.btn:focus {
   transform: translateY(-3px);
 }
 
@@ -136,19 +138,44 @@ function App(props) {
 function IconButton(props) {
   return (
     <button className="btn">
-      <i className="icon">
-        {props.icon}
-      </i>
+      <i className="icon">{props.icon}</i>
       {props.children}
     </button>
-  )
+  );
 }
 ```
+
+import styles from 'styled-components';
+const StyledButton = styled.button`
+color: tomato;
+font-weight: bold;
+padding: 20px;
+
+&:hover,
+&:focus {
+transform: translateY(-3px);
+}
+
+.i {
+width: 32px;
+height: 32px;
+}
+`;
+
+function IconButton(props) {
+return (
+<StyledButton >
+<i>
+{props.icon}
+</i>
+{props.children}
+</StyledButton>
+)
+}
 
 ---
 
 ### Exercise 3
-
 
 ```css
 .paragraph {
@@ -171,14 +198,11 @@ function FantasticStory(props) {
   return (
     <div>
       <p className="paragraph">
-        The <strong>quick</strong> red fox jumped over
-        the <em>lazy</em> dog.
+        The <strong>quick</strong> red fox jumped over the <em>lazy</em> dog.
       </p>
-      <p>
-        The end.
-      </p>
+      <p>The end.</p>
     </div>
-  )
+  );
 }
 ```
 

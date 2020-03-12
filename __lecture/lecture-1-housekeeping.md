@@ -12,6 +12,15 @@ in SomeComponent (at src/index.js:24)
 in App (at src/index.js:31)
 ```
 
+const items = [
+{ text: 'Item 1' },
+{ text: 'Item 2' },
+]
+
+const Bacon = ({ items }) => (
+{items.map(item => <li key={`id${item.text.replace(' ', '-')`}>{item.text}</li>)}
+);
+
 ---
 
 ### 🏠Housekeeping: Modules
@@ -27,7 +36,7 @@ export default Button;
 ```
 
 ```js
-import Button from '../Button';
+import Button from "../Button";
 ```
 
 ---
@@ -42,7 +51,7 @@ export const logOut = () => { ✂️ };
 ```
 
 ```js
-import { logIn, logOut } from '../../authentication-utils.js';
+import { logIn, logOut } from "../../authentication-utils.js";
 ```
 
 ---
@@ -72,7 +81,7 @@ export default data;
 
 ```js
 // src/index.js
-import theBestData from './data';
+import theBestData from "./data";
 ```
 
 ---
@@ -84,10 +93,10 @@ export const MAGIC_NUMBER = 123;
 
 ```js
 // src/index.js
-import MAGIC_NUMBER from './data';
+import MAGIC_NUMBER from "./data";
 ```
 
----
+## import { MAGIC_NUMBER } from './data';
 
 ```js
 // src/data.js
@@ -101,10 +110,13 @@ export default data;
 
 ```js
 // src/index.js
-import {data, users} from './data';
+import { data, users } from "./data";
 ```
 
----
+export const users = [];
+export const sessions = [];
+
+## import { users } from './data';
 
 ```js
 // src/data.js
@@ -114,7 +126,7 @@ export default const baseball = '⚾️';
 
 ```js
 // src/index.js
-import baseball from './data';
+import baseball from "./data";
 ```
 
 ---
