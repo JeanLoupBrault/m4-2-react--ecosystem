@@ -35,7 +35,7 @@ const ItemDetails = () => {
                     <SellerImg src={seller.avatarSrc} alt="portrait of store owner" />
                     <span>
                         Sold by:
-                        <StoreName>{seller.storeName}</StoreName>
+            <StoreName>{seller.storeName}</StoreName>
                     </span>
                 </SellerInfo>
             </Details>

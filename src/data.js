@@ -1,12 +1,14 @@
 export const sellers = {
     alice: {
         id: 'alice',
+        name: 'Alice',
         storeName: "Alice's Fruit Store",
         description: "Fruits n' stuff",
         avatarSrc: '/assets/alice.jpg',
     },
     bob: {
         id: 'bob',
+        name: 'Bob',
         storeName: 'Fruit Bazaar, by Bob',
         description: 'Imported fruit from across the world!',
         avatarSrc: '/assets/bob.jpg',

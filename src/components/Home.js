@@ -12,7 +12,7 @@ function Home(props) {
             <Intro>
                 <Paragraph>
                     Fruit emporium sells the finest fruits from this world and beyond.
-        </Paragraph>
+                </Paragraph>
                 <Paragraph>
                     <strong>Browse items:</strong>
                 </Paragraph>

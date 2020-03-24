@@ -13,17 +13,12 @@ const Header = () => {
                     <p>
                         <NavigationLink exact activeClassName="active" to="/">
                             Home
-                        </NavigationLink>
+            </NavigationLink>
                     </p>
                     <li>
                         <NavigationLink activeClassName="active" to="/about">
                             About
-                        </NavigationLink>
-                    </li>
-                    <li>
-                        <NavigationLink activeClassName="active" to="/sellers">
-                            Sellers
-                        </NavigationLink>
+            </NavigationLink>
                     </li>
                 </NavigationList>
             </nav>

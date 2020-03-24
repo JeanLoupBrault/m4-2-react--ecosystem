@@ -6,36 +6,37 @@ import { sellers, items } from '../data';
 
 import Button from './Button';
 
-const ItemDetails = () => {
-    const { itemId } = useParams();
-
-    const currentItem = items[itemId];
-    const seller = sellers[currentItem.sellerId];
-
-    const itemInStock = currentItem.quantity > 0;
+const ItemDetailsSeller = () => {
+    const { sellerId } = useParams();
+    // const { itemId } = useParams();
+    const currentSeller = sellers[sellerId];
+    // const seller = sellers[currentSeller.sellerId];
+    const item = items[currentSeller.itemId];
+    // const currentItem = items[itemId];
+    const itemInStock = item.quantity > 0;
 
     return (
         <Wrapper>
-            <BigPic src={currentItem.imageSrc} />
+            <BigPic src={item.imageSrc} />
             <Details>
-                <Name>{currentItem.name}</Name>
-                <LatinName>{currentItem.latinName}</LatinName>
-                <Description>{currentItem.description}</Description>
+                <Name>{item.name}</Name>
+                <LatinName>{item.latinName}</LatinName>
+                <Description>{currentSeller.description}</Description>
                 <CountryOfOrigin>
-                    Product of <strong>{currentItem.countryOfOrigin}</strong>
+                    Product of <strong>{item.countryOfOrigin}</strong>
                 </CountryOfOrigin>
 
                 {itemInStock ? (
-                    <Button>${currentItem.price} - Buy now</Button>
+                    <Button>${item.price} - Buy now</Button>
                 ) : (
                         <OutOfStock>Out of Stock</OutOfStock>
                     )}
 
                 <SellerInfo>
-                    <SellerImg src={seller.avatarSrc} alt="portrait of store owner" />
+                    <SellerImg src={currentSeller.avatarSrc} alt="portrait of store owner" />
                     <span>
                         Sold by:
-                        <StoreName>{seller.storeName}</StoreName>
+                        <StoreName>{currentSeller.storeName}</StoreName>
                     </span>
                 </SellerInfo>
             </Details>
@@ -114,6 +115,6 @@ const OutOfStock = styled.div`
     cursor: not-allowed;
 `;
 
-export default ItemDetails;
+export default ItemDetailsSeller;
 
 
